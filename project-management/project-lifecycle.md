@@ -46,6 +46,9 @@
       - [9. Additional Resources](#9-additional-resources)
       - [10. Change History](#10-change-history)
     - [TODO.md Format](#todomd-format)
+    - [Converting Specifications to Tasks](#converting-specifications-to-tasks-1)
+    - [Example Conversion](#example-conversion-1)
+    - [Automation Workflow](#automation-workflow)
     - [README.md Format](#readmemd-format)
     - [Architecture Decision Records](#architecture-decision-records)
   - [Workflows and Processes](#workflows-and-processes)
@@ -315,42 +318,84 @@ Record of significant changes to the specification.
 
 ### TODO.md Format
 
-The TODO.md document organizes tasks using Conventional Commits categories and semantic versioning:
+The TODO.md document lists pending tasks using Conventional Commits format to enable automation. Always start with the [TODO.md template](./todo-template.md) when creating a new service:
 
 ```markdown
 # TODO - Service Name
 
-## [Unreleased]
+## Next Release Tasks
 
-### Feat ✨
-- [ ] **scope:** Description of feature task (#issue-number)
-- [x] **scope:** Completed feature task (#issue-number)
+### feat: Features
+- feat(api): implement user authentication endpoint (#123)
+- feat(core): add event validation middleware (#124)
 
-### Fix 🐛
-- [ ] **scope:** Description of bug fix (#issue-number)
+### fix: Bug Fixes
+- fix(api): correct error response format in REST endpoints (#125)
 
-### Refactor 🔨
-- [ ] **scope:** Description of refactoring task (#issue-number)
-
-## [v1.0.0] - YYYY-MM-DD
-
-### Feat ✨
-- [x] **scope:** Completed feature from previous release (#issue-number)
+### docs: Documentation
+- docs(readme): update with new configuration options (#126)
 ```
 
-Common categories include:
-- **Feat ✨** - New features
-- **Fix 🐛** - Bug fixes
-- **Docs 📚** - Documentation changes
-- **Style 💎** - Formatting, white-space, etc.
-- **Refactor 🔨** - Code changes that neither fix bugs nor add features
-- **Perf ⚡** - Performance improvements
-- **Test 🧪** - Adding or modifying tests
-- **Build 🏗️** - Changes to build process or tools
-- **CI 🤖** - Changes to CI configuration
-- **Chore 🧹** - Other changes that don't modify src or test files
+Key principles:
+- Include **only pending tasks** (no completed work)
+- Format each task as a proper Conventional Commit message
+- Remove tasks from TODO.md after completion (they become part of commit history)
+- Generate CHANGELOG.md automatically from commit history
 
-> **Note:** The emoji icons are optional but provide visual distinction between categories.
+Common categories include:
+- **feat**: New features
+- **fix**: Bug fixes
+- **docs**: Documentation changes
+- **style**: Code style and formatting changes
+- **refactor**: Code changes that neither fix bugs nor add features
+- **perf**: Performance improvements
+- **test**: Adding or modifying tests
+- **build**: Changes to build process or tools
+- **ci**: Changes to CI configuration
+- **chore**: Maintenance changes that don't modify src or test files
+
+### Converting Specifications to Tasks
+
+Each requirement in SPEC.md should be translated into one or more tasks in TODO.md:
+
+1. **Group by Type** - Categorize as features, fixes, refactoring, etc.
+2. **Use Conventional Commits Format** - `type(scope): description`
+3. **Be Specific and Concise** - Tasks should be clear but concise enough to work as commit messages
+4. **Reference GitHub Issues** - Create corresponding issues and reference them with `(#123)`
+5. **Prioritize** - Order tasks by importance and dependencies
+
+### Example Conversion
+
+**From SPEC.md:**
+```markdown
+### API Design
+
+1. **gRPC Service Definition** - Define the service in Protocol Buffers with these operations:
+   - `CreateEvent` - Create a new Nostr event
+   - `GetEvents` - Retrieve events with filters
+   - `GetEvent` - Retrieve a single event by ID
+```
+
+**To TODO.md:**
+```markdown
+### feat: Features
+- feat(api): define base proto service definition (#10)
+- feat(api): implement CreateEvent gRPC method (#11)
+- feat(api): implement GetEvents gRPC method (#12)
+- feat(api): implement GetEvent gRPC method (#13)
+- feat(api): configure gRPC-Gateway for REST endpoints (#14)
+```
+
+### Automation Workflow
+
+For maximum efficiency, we recommend setting up automation:
+
+1. **Pre-commit Hook**: Validate that commit messages match a task in TODO.md
+2. **Post-commit Hook**: Remove the committed task from TODO.md
+3. **Release Script**: Generate CHANGELOG.md entries from commit history
+4. **Recommended Tools**: `git-cliff` or `conventional-changelog` for changelog generation
+
+See the [todo-template.md](./todo-template.md) for the standardized format and structure, and refer to the [automation-workflow.md](../guides/automation-workflow.md) document for detailed implementation examples of these automation techniques.
 
 ### README.md Format
 
@@ -448,7 +493,7 @@ When preparing a release:
 - [TODO.md Template](./todo-template.md)
 - [README.md Template](./readme-template.md)
 - [ADR Template](./adr-template.md)
-- [Example Service: example-backend](https://github.com/bitiq/example-backend)
+- [Example Service: example-backend](https://github.com/paulcapestany/example-backend)
 
 ---
 

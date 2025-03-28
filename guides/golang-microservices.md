@@ -123,38 +123,49 @@ Each microservice repository **MUST** include these key documents:
 
 1. **SPEC.md**: Defines project requirements and specifications (what the service should do)
 2. **README.md**: Provides setup instructions, usage guides, and overview information
-3. **TODO.md**: Tracks actionable development tasks in a format compatible with SemVer and Conventional Commits
+3. **TODO.md**: Tracks pending development tasks in Conventional Commits format
+4. **CHANGELOG.md**: Automatically generated record of all changes (generated from commit history)
 
 The relationship between these documents follows the project lifecycle:
 - SPEC.md defines the "what and why" (requirements)
-- TODO.md breaks down the "how and when" (implementation tasks)
+- TODO.md lists the "what's next" (pending implementation tasks)
 - README.md explains the "how to use" (consumption)
+- CHANGELOG.md documents the "what changed" (history)
 
 See the [Project Lifecycle Guide](../project-management/project-lifecycle.md) for detailed information on these documents and workflow.
 
+Example TODO.md:
 ```markdown
 # TODO - `nostr_query` Service
 
-## [Unreleased]
+## Next Release Tasks
 
-### Feat ✨
-- [ ] **api:** Define initial gRPC service for vector search (#123)
-- [ ] **search:** Implement cosine similarity calculation (#124)
+### feat: Features
+- feat(api): define initial gRPC service for vector search (#123)
+- feat(search): implement cosine similarity calculation (#124)
 
-### Fix 🐛
-- [ ] **config:** Load Couchbase credentials from environment variables (#125)
-
-## [v1.1.0] - 2025-03-20
-
-### Feat ✨
-- [x] **api:** Implement basic FTS query endpoint (#110)
-- [x] **couchbase:** Add FTS index creation logic (#112)
-
-### Refactor 🔨
-- [x] **logging:** Migrate from `log` to structured `slog` (#115)
+### fix: Bug Fixes
+- fix(config): load Couchbase credentials from environment variables (#125)
 ```
 
-> **Note on Emojis:** You may see emojis like `✨` or `🐛` in the TODO examples. These are optional—if you or your team prefer a strictly text-based format (`feat`, `fix`, etc.), that is equally acceptable.
+Following the automation-friendly approach:
+1. When a task is implemented, use its description as your commit message
+2. After the commit, remove the task from TODO.md
+3. The task will automatically become part of the project history via commit logs
+4. CHANGELOG.md can be automatically generated for each release
+
+### Development Workflow
+
+1. Select a task from TODO.md
+2. Create a feature branch with a name that matches the task type/scope
+   - Example: `feat/vector-search-api`
+3. Implement the functionality
+4. Commit with a message that exactly matches the TODO item
+   - Example: `feat(api): define initial gRPC service for vector search (#123)`
+5. Remove the completed task from TODO.md
+6. Submit a Pull Request
+7. After approval and merging, the commit becomes part of the project history
+8. For releases, generate CHANGELOG.md automatically from commits
 
 ### Makefile Standards
 
@@ -237,7 +248,7 @@ syntax = "proto3";
 
 package bitiq.nostr_query.v1;
 
-option go_package = "github.com/bitiq/nostr_query/api/grpc/proto/v1";
+option go_package = "github.com/paulcapestany/nostr_query/api/grpc/proto/v1";
 
 service NostrQueryService {
   rpc Search(SearchRequest) returns (SearchResponse);

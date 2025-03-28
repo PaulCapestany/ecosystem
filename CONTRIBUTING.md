@@ -40,7 +40,7 @@ By having a consistent structure (SPEC.md, README.md, TODO.md, CHANGELOG.md, doc
 
 ## Using the Ecosystem Repository
 
-The [`bitiq/ecosystem`](https://github.com/bitiq/ecosystem) repository serves as the central hub for development standards, templates, and guides. It contains:
+The [`paulcapestany/ecosystem`](https://github.com/paulcapestany/ecosystem) repository serves as the central hub for development standards, templates, and guides. It contains:
 
 1. **Guides Directory:** Contains comprehensive guides like the Golang Microservices Development Guide
 2. **Project Management Directory:** Contains the Project Lifecycle Guide and standardized templates for SPEC.md, TODO.md, ADRs, and other documents
@@ -55,7 +55,7 @@ To propose changes to standards or templates, open a pull request against the ec
 
 ## Project Lifecycle
 
-Bitiq follows a structured project lifecycle as documented in the [Project Lifecycle Guide](https://github.com/bitiq/ecosystem/project-management/project-lifecycle.md). The key phases are:
+Bitiq follows a structured project lifecycle as documented in the [Project Lifecycle Guide](https://github.com/paulcapestany/ecosystem/project-management/project-lifecycle.md). The key phases are:
 
 1. **Ideation and Specification** - Define what needs to be built (SPEC.md)
 2. **Planning and Task Creation** - Break down work into actionable tasks (TODO.md)
@@ -72,26 +72,31 @@ Every Bitiq project must maintain these key documents:
 
 1. **SPEC.md**: Defines project requirements and specifications
    - Created during the ideation phase
-   - Follows the [SPEC.md template](https://github.com/bitiq/ecosystem/project-management/spec-template.md)
+   - Follows the [SPEC.md template](https://github.com/paulcapestany/ecosystem/project-management/spec-template.md)
    - Documents what the service should do and why
 
-2. **TODO.md**: Tracks actionable development tasks
-   - Organized by Conventional Commits categories
-   - Compatible with Semantic Versioning
+2. **TODO.md**: Tracks pending development tasks
+   - Contains only tasks that have not yet been completed
+   - Formatted directly in Conventional Commits syntax
+   - Each task can be used directly as a commit message
    - References GitHub issue numbers when applicable
    - Example format:
      ```markdown
-     ### Feat ✨
-     - [ ] **api:** Implement endpoint X (#123)
+     feat(api): implement endpoint X (#123)
      ```
 
 3. **README.md**: Provides setup instructions and usage information
    - Focuses on how to use, set up, and contribute to the service
    - Includes API documentation and examples
 
-4. **Architecture Decision Records (ADRs)**: Documents significant technical decisions
+4. **CHANGELOG.md**: Records all notable changes
+   - Automatically generated from commit history
+   - Follows Semantic Versioning structure
+   - Should not be manually edited (use proper commit messages instead)
+
+5. **Architecture Decision Records (ADRs)**: Documents significant technical decisions
    - Stored in `docs/adr/` directory
-   - Follows the [ADR template](https://github.com/bitiq/ecosystem/project-management/adr-template.md)
+   - Follows the [ADR template](https://github.com/paulcapestany/ecosystem/project-management/adr-template.md)
    - Example: `docs/adr/0001-use-couchbase.md`
 
 ## Semantic Versioning & Conventional Commits

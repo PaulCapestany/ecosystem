@@ -63,7 +63,7 @@ ecosystem/
 
 ## Related Projects
 
-- [example-backend](https://github.com/bitiq/example-backend) - Reference implementation of a Bitiq microservice
+- [example-backend](https://github.com/paulcapestany/example-backend) - Reference implementation of a Bitiq microservice
 - *(Other projects will be listed here as they are created)*
 
 ## Contributing
