@@ -46,6 +46,10 @@ ecosystem/
 - [SPEC.md Template](project-management/spec-template.md) - Template for creating project specifications
 - [ADR Template](project-management/adr-template.md) - Template for Architecture Decision Records
 
+## Contribution Guidelines
+
+Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and guides like [Automation Workflow](guides/automation-workflow.md) and [Golang Microservices](guides/golang-microservices.md) before contributing. Any AI assistant involved in this repository should adhere to these guidelines.
+
 ## How to Use This Repository
 
 ### For New Contributors
