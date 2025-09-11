@@ -184,6 +184,7 @@ The development phase is where the service is actually built according to the sp
 ### Activities
 
 1. **Repository Setup** - Initialize codebase with standard structure
+   - Include standard docs such as `README.md`, `SPEC.md`, `TODO.md`, ADRs, and `AGENTS.md` (use the [AGENTS template](./agents-template.md)).
 2. **Architecture Implementation** - Build core components based on ADRs
 3. **Feature Development** - Implement tasks from TODO.md
 4. **Code Reviews** - Ensure quality through peer review

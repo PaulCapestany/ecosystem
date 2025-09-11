@@ -125,6 +125,7 @@ Each microservice repository **MUST** include these key documents:
 2. **README.md**: Provides setup instructions, usage guides, and overview information
 3. **TODO.md**: Tracks pending development tasks in Conventional Commits format
 4. **CHANGELOG.md**: Automatically generated record of all changes (generated from commit history)
+5. **AGENTS.md**: Lists repository conventions and links to ecosystem standards (copy from the [AGENTS template](../project-management/agents-template.md))
 
 The relationship between these documents follows the project lifecycle:
 - SPEC.md defines the "what and why" (requirements)
