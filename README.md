@@ -61,6 +61,20 @@ ecosystem/
 2. Ensure your project follows the established structure and standards
 3. Propose updates to these standards when improvements are identified
 
+### Initializing a New Project
+
+When starting a new repository, copy the standard documentation templates from this repository:
+
+```bash
+# from the root of your new project
+cp path/to/ecosystem/project-management/spec-template.md SPEC.md
+cp path/to/ecosystem/project-management/todo-template.md TODO.md
+mkdir -p docs/adr
+cp path/to/ecosystem/project-management/adr-template.md docs/adr/0001-example-decision.md
+```
+
+Place `SPEC.md` and `TODO.md` in the project root (or within a `docs/` directory). Each ADR should live in `docs/adr/` using the template with an incrementing number and descriptive title.
+
 ## Related Projects
 
 - [example-backend](https://github.com/paulcapestany/example-backend) - Reference implementation of a Bitiq microservice

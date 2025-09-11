@@ -9,6 +9,7 @@
 - [Bitiq Project Lifecycle Guide](#bitiq-project-lifecycle-guide)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+  - [Initial Project Setup](#initial-project-setup)
   - [Project Lifecycle Overview](#project-lifecycle-overview)
   - [Phase 1: Ideation and Specification](#phase-1-ideation-and-specification)
     - [Activities](#activities)
@@ -68,6 +69,16 @@ Our project lifecycle is designed to be:
 - **Consistent** - Ensuring uniform practices across services
 
 This guide serves as the definitive reference for how projects are managed within the Bitiq ecosystem.
+
+## Initial Project Setup
+
+Before entering the lifecycle phases, initialize the repository with the standard documentation templates:
+
+1. Copy `project-management/spec-template.md` to `SPEC.md` at the repository root or in a `docs/` directory.
+2. Copy `project-management/todo-template.md` to `TODO.md` in the same location.
+3. Create a `docs/adr/` directory and copy `project-management/adr-template.md` there as the starting point for recording architecture decisions.
+
+These files establish the baseline project documentation used throughout the remaining phases.
 
 ## Project Lifecycle Overview
 
