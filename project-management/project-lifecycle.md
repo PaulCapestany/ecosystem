@@ -423,6 +423,11 @@ The README.md should include:
 8. **Deployment** - How to deploy
 9. **References** - Related resources
 
+Use the standardized templates in `readme-templates/` to bootstrap new READMEs and adapt to the service's needs:
+- Full service README: `readme-templates/README.bitiq-template.md`
+- Lite README for small libs/CLIs: `readme-templates/README.bitiq-lite.md`
+Also include an `AGENTS.md` (copy from `AGENTS.template.md`) to guide AI/dev assistants.
+
 ### Architecture Decision Records
 
 ADRs should follow this format:
@@ -503,7 +508,9 @@ When preparing a release:
 
 - [SPEC.md Template](./spec-template.md)
 - [TODO.md Template](./todo-template.md)
-- [README.md Template](./readme-template.md)
+- [README (Full) Template](../readme-templates/README.bitiq-template.md)
+- [README (Lite) Template](../readme-templates/README.bitiq-lite.md)
+- [AGENTS.md Template](../AGENTS.template.md)
 - [ADR Template](./adr-template.md)
 - [Example Service: example-backend](https://github.com/paulcapestany/example-backend)
 

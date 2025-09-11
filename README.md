@@ -30,6 +30,10 @@ ecosystem/
 │   ├── spec-template.md
 │   ├── todo-template.md
 │   └── adr-template.md
+├── readme-templates/      # Standardized README templates
+│   ├── README.bitiq-template.md
+│   └── README.bitiq-lite.md
+├── AGENTS.template.md     # Template for repo-level AGENTS.md
 └── docs/                  # General ecosystem documentation
     └── architecture-overview.md
 ```
@@ -46,10 +50,15 @@ ecosystem/
 - [SPEC.md Template](project-management/spec-template.md) - Template for creating project specifications
 - [ADR Template](project-management/adr-template.md) - Template for Architecture Decision Records
 
+### Documentation Templates
+
+- [Service README (Full)](readme-templates/README.bitiq-template.md)
+- [Library/CLI README (Lite)](readme-templates/README.bitiq-lite.md)
+- [AGENTS.md Template](AGENTS.template.md)
+
 ## Contribution Guidelines
 
 Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and guides like [Automation Workflow](guides/automation-workflow.md) and [Golang Microservices](guides/golang-microservices.md) before contributing. Any AI assistant involved in this repository should adhere to these guidelines.
-
 ## How to Use This Repository
 
 ### For New Contributors
