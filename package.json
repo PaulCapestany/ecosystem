@@ -1,0 +1,22 @@
+{
+  "name": "ecosystem",
+  "version": "1.0.0",
+  "description": "Welcome to the central repository for the Bitiq ecosystem! This repository serves as the foundation for all Bitiq projects, providing standardized development guides, documentation templates, and best practices.",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "test": "echo \"No tests\"",
+    "release": "semantic-release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@semantic-release/github": "^11.0.6",
+    "husky": "^9.1.7",
+    "semantic-release": "^24.2.8"
+  }
+}

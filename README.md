@@ -74,6 +74,10 @@ Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and guides like [Automation
 
 We welcome contributions to improve these standards and templates! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
+## Release Process
+
+Commits are validated against the [Conventional Commits](https://www.conventionalcommits.org/) specification using commitlint and Husky. A GitHub Actions workflow runs [semantic-release](https://semantic-release.gitbook.io) on pushes to `main` to tag new releases based on commit history.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
