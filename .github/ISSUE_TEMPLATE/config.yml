@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Organization support
+    url: https://github.com/bitiq-io/.github/discussions
+    about: Please use discussions for support and questions.
