@@ -49,6 +49,7 @@ ecosystem/
 - [Project Lifecycle Guide](project-management/project-lifecycle.md) - The complete Bitiq project lifecycle from ideation to maintenance
 - [SPEC.md Template](project-management/spec-template.md) - Template for creating project specifications
 - [ADR Template](project-management/adr-template.md) - Template for Architecture Decision Records
+- [Docs Check Workflow Template](project-management/docs-check-workflow.yml) - Example GitHub Action to verify required docs
 
 ### Documentation Templates
 
