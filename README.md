@@ -80,13 +80,30 @@ When starting a new repository, copy the standard documentation templates from t
 
 ```bash
 # from the root of your new project
+
+# Core docs
 cp path/to/ecosystem/project-management/spec-template.md SPEC.md
 cp path/to/ecosystem/project-management/todo-template.md TODO.md
 mkdir -p docs/adr
 cp path/to/ecosystem/project-management/adr-template.md docs/adr/0001-example-decision.md
+
+# README (choose one)
+cp path/to/ecosystem/readme-templates/README.bitiq-template.md README.md
+# or, for libraries/CLIs:
+# cp path/to/ecosystem/readme-templates/README.bitiq-lite.md README.md
+
+# Agents guide
+cp path/to/ecosystem/AGENTS.template.md AGENTS.md
 ```
 
 Place `SPEC.md` and `TODO.md` in the project root (or within a `docs/` directory). Each ADR should live in `docs/adr/` using the template with an incrementing number and descriptive title.
+
+#### Template Usage Notes
+
+- Use the Full README for services; use the Lite README for small libraries/CLIs.
+- Always include `AGENTS.md` to guide AI/dev assistants working in the repo.
+- Update placeholders in README (service name, links, env vars) and keep the “Release & Changelog” note (SemVer + auto-generated changelog).
+- Keep `TODO.md` entries in Conventional Commits format; pull commit messages from TODO where possible.
 
 ## Related Projects
 
