@@ -168,6 +168,23 @@ This ensures that important decisions are well-documented and future contributor
 - Update both SPEC.md (if requirements changed) and TODO.md (to mark completed items)
 - Ensure all tests pass and documentation is updated
 
+### Creating PRs via GitHub CLI
+
+To avoid formatting issues in PR descriptions:
+
+- Prefer `gh pr create --fill` to prefill title/body from the commit and apply the repo’s PR template
+- If supplying a custom body, use `--body-file <file>` so newlines render correctly (avoid literal `\n`)
+
+Example:
+
+```bash
+gh pr create \
+  --base main \
+  --head $(git branch --show-current) \
+  --title "$(git log -1 --pretty=%s)" \
+  --body-file .github/PULL_REQUEST_TEMPLATE.md
+```
+
 ## Release Process
 
 Merges to `main` may trigger automated CI/CD and GitOps processes for test environments. Actual stable releases are cut with SemVer tags, and `CHANGELOG.md` entries are updated accordingly.
