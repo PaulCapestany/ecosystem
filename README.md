@@ -62,6 +62,8 @@ ecosystem/
 - `scripts/create-pr.sh`: Opens a GitHub PR for the current branch using the repo’s PR template and safe newlines (uses `gh pr create --body-file`). Optional `BASE_BRANCH` env var (defaults to `main`).
 - `scripts/bootstrap-docs.sh`: Bootstraps standard docs (SPEC.md, TODO.md, README full/lite, AGENTS.md) into a target repo. Example: `scripts/bootstrap-docs.sh --dest ../my-service --readme full`.
 - `scripts/check-required-docs.sh`: Verifies presence of core docs (README.md, AGENTS.md, SPEC.md, TODO.md) in a repo.
+  
+See `scripts/README.md` for details and examples.
 
 ## Contribution Guidelines
 
