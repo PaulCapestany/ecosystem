@@ -67,6 +67,19 @@ If a Makefile is not present, prefer language‑standard equivalents (e.g., `go 
 - Link tasks from `TODO.md` and related issues
 - Keep PRs small and reviewable; split if broad
 
+### Creating PRs via GitHub CLI
+
+- Prefer `gh pr create --fill` to prefill title/body from commit and apply the repo’s PR template.
+- If supplying a custom body, use `--body-file <file>` to avoid literal `\\n` in the PR description.
+- Example:
+  ```bash
+  gh pr create \
+    --base main \
+    --head $(git branch --show-current) \
+    --title "$(git log -1 --pretty=%s)" \
+    --body-file .github/PULL_REQUEST_TEMPLATE.md
+  ```
+
 ## When to Create an ADR
 
 Create an ADR (`docs/adr/NNNN-title.md`) when you:
@@ -101,4 +114,3 @@ Proposed | Accepted | Superseded by ADR-XXXX
 ---
 
 This template is intended to be copied to `AGENTS.md` in downstream repos and adapted as needed. Keep it concise, actionable, and aligned with Bitiq ecosystem standards.
-
