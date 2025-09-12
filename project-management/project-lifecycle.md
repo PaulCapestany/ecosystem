@@ -427,6 +427,8 @@ Use the standardized templates in `readme-templates/` to bootstrap new READMEs a
 - Full service README: `readme-templates/README.bitiq-template.md`
 - Lite README for small libs/CLIs: `readme-templates/README.bitiq-lite.md`
 Also include an `AGENTS.md` (copy from `AGENTS.template.md`) to guide AI/dev assistants.
+For fast setup in a new repo, you can use the helper script:
+- `scripts/bootstrap-docs.sh --dest <path> --readme full|lite`
 
 ### Architecture Decision Records
 
