@@ -56,6 +56,10 @@ ecosystem/
 - [Library/CLI README (Lite)](readme-templates/README.bitiq-lite.md)
 - [AGENTS.md Template](AGENTS.template.md)
 
+### Helper Scripts
+
+- `scripts/create-pr.sh`: Opens a GitHub PR for the current branch using the repo’s PR template and safe newlines (uses `gh pr create --body-file`). Optional `BASE_BRANCH` env var (defaults to `main`).
+
 ## Contribution Guidelines
 
 Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and guides like [Automation Workflow](guides/automation-workflow.md) and [Golang Microservices](guides/golang-microservices.md) before contributing. Any AI assistant involved in this repository should adhere to these guidelines.
