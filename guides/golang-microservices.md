@@ -223,6 +223,22 @@ clean:
 	rm -rf bin/ coverage.out
 ```
 
+#### Docs Target (Recommended)
+
+Add a simple docs check target to ensure required docs are present in each repo. This leverages the ecosystem helper script:
+
+```makefile
+.PHONY: docs
+docs:
+	bash scripts/check-required-docs.sh .
+```
+
+Run with:
+
+```bash
+make docs
+```
+
 > **Tip:** Always include a `clean` target so developers can remove build artifacts, coverage files, etc., ensuring a fresh build environment.
 
 ---
