@@ -68,6 +68,19 @@ This repo primarily contains documentation and templates (not runtime services).
 - Call out any breaking renames or section changes
 - If adding a new standard or template, point to where it is referenced in `README.md` and lifecycle docs
 
+### Creating PRs via GitHub CLI
+
+- Prefer `gh pr create --fill` to prefill title/body from commit and apply the repo’s PR template.
+- If supplying a custom body, use `--body-file <file>` to avoid literal `\\n` in the PR description.
+- Example:
+  ```bash
+  gh pr create \
+    --base main \
+    --head $(git branch --show-current) \
+    --title "$(git log -1 --pretty=%s)" \
+    --body-file .github/PULL_REQUEST_TEMPLATE.md
+  ```
+
 ## When to Use an ADR
 
 Create an ADR (`docs/adr/NNNN-title.md`) when you introduce or change:
@@ -102,4 +115,3 @@ Proposed | Accepted | Superseded by ADR-XXXX
 ---
 
 This AGENTS.md is specific to the ecosystem repository. For service repositories, copy and adapt `AGENTS.template.md` to match the codebase and tooling of that repo.
-
