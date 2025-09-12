@@ -514,6 +514,7 @@ When preparing a release:
 - [README (Lite) Template](../readme-templates/README.bitiq-lite.md)
 - [AGENTS.md Template](../AGENTS.template.md)
 - [ADR Template](./adr-template.md)
+- [Docs Check Workflow Template](./docs-check-workflow.yml)
 - [Example Service: example-backend](https://github.com/paulcapestany/example-backend)
 
 ---
