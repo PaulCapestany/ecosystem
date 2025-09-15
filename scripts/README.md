@@ -26,12 +26,20 @@ BASE_BRANCH=release ./scripts/create-pr.sh
 Bootstrap standard docs into a target repository.
 
 ```bash
-./scripts/bootstrap-docs.sh --dest ../my-service --readme full   # or lite
+# README: full (default) or lite
+./scripts/bootstrap-docs.sh --dest ../my-service --readme full
+
+# Also seed role templates into agents/
+./scripts/bootstrap-docs.sh --dest ../my-service --agents
+
+# Combine options
+./scripts/bootstrap-docs.sh --dest ../my-service --readme lite --agents
 ```
 
 Copies (non-destructively):
 - `SPEC.md`, `TODO.md`, `docs/adr/0001-example-decision.md`
 - `README.md` (full/lite) and `AGENTS.md`
+- If `--agents` is provided: `agents/` role templates (`planner.md`, `architect.md`, `implementer-go.md`, `tester.md`, `security.md`, `infra-tekton.md`, `infra-argocd.md`)
 
 ### scripts/check-required-docs.sh
 
@@ -42,4 +50,3 @@ Verify that a repository contains the required docs.
 ```
 
 Checks for: `README.md`, `AGENTS.md`, `SPEC.md`, `TODO.md`
-
