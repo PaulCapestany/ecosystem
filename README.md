@@ -43,6 +43,7 @@ ecosystem/
 ### Development Guides
 
 - [Golang Microservices Development Guide](guides/golang-microservices.md) - Definitive standards for Bitiq Golang microservices
+- [AI Assistants: Multi-agent Pattern](guides/ai-assistants.md) - Best practices for using AI/dev assistants
 
 ### Project Management
 

@@ -97,6 +97,8 @@ Key documents guide each phase:
 - **README.md** - Service documentation and usage guide
 - **Architecture Decision Records (ADRs)** - Record of key technical decisions
 
+See also: `guides/ai-assistants.md` for how to leverage AI/dev assistants in each phase with role-scoped guidance.
+
 ![Project Lifecycle Diagram](../workflow-diagrams/project-lifecycle.png)
 
 ## Phase 1: Ideation and Specification

@@ -18,8 +18,7 @@ This repo primarily contains documentation and templates (not runtime services).
 
 - `README.md` — Overview and entry points to all standards
 - `CONTRIBUTING.md` — Contribution and workflow guidelines
-- `CLAUDE.md` — Helpful build/lint/test conventions used across Bitiq services
-- `guides/` — Authoritative guides (e.g., `golang-microservices.md`, `automation-workflow.md`)
+- `guides/` — Authoritative guides (e.g., `golang-microservices.md`, `automation-workflow.md`, `ai-assistants.md`)
 - `project-management/` — Lifecycle and templates:
   - `project-lifecycle.md` — Canonical lifecycle; references templates
   - `spec-template.md`, `todo-template.md`, `adr-template.md`
