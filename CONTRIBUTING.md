@@ -55,7 +55,7 @@ To propose changes to standards or templates, open a pull request against the ec
 
 ## Project Lifecycle
 
-Bitiq follows a structured project lifecycle as documented in the [Project Lifecycle Guide](https://github.com/paulcapestany/ecosystem/project-management/project-lifecycle.md). The key phases are:
+Bitiq follows a structured project lifecycle as documented in the [Project Lifecycle Guide](https://github.com/paulcapestany/ecosystem/blob/main/project-management/project-lifecycle.md). The key phases are:
 
 1. **Ideation and Specification** - Define what needs to be built (SPEC.md)
 2. **Planning and Task Creation** - Break down work into actionable tasks (TODO.md)
@@ -72,7 +72,7 @@ Every Bitiq project must maintain these key documents:
 
 1. **SPEC.md**: Defines project requirements and specifications
    - Created during the ideation phase
-   - Follows the [SPEC.md template](https://github.com/paulcapestany/ecosystem/project-management/spec-template.md)
+   - Follows the [SPEC.md template](https://github.com/paulcapestany/ecosystem/blob/main/project-management/spec-template.md)
    - Documents what the service should do and why
 
 2. **TODO.md**: Tracks pending development tasks
@@ -96,7 +96,7 @@ Every Bitiq project must maintain these key documents:
 
 5. **Architecture Decision Records (ADRs)**: Documents significant technical decisions
    - Stored in `docs/adr/` directory
-   - Follows the [ADR template](https://github.com/paulcapestany/ecosystem/project-management/adr-template.md)
+   - Follows the [ADR template](https://github.com/paulcapestany/ecosystem/blob/main/project-management/adr-template.md)
    - Example: `docs/adr/0001-use-couchbase.md`
 
 ## Semantic Versioning & Conventional Commits
