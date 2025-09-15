@@ -1,12 +1,12 @@
-name: Release
+name: Commitlint
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
-  release:
+  commitlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,10 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - name: Lint commits since last release
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint commits in PR range
         run: npx commitlint --from=origin/main --to=HEAD
-      - run: npm test
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
