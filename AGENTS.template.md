@@ -16,6 +16,7 @@ Purpose: Enable AI/dev assistants to work productively and safely in this reposi
 - `SPEC.md` — source of truth for requirements
 - `TODO.md` — pending tasks in Conventional Commits format
 - `docs/adr/` — Architecture Decision Records (create for significant choices)
+- `agents/` — Role-scoped assistant guides (e.g., planner, architect, infra)
 - `api/` — API definitions (OpenAPI/gRPC) if applicable
 - `cmd/`, `internal/`, `pkg/` — source layout (Go) or language‑specific equivalents
 - `Makefile` — canonical build, test, lint, run targets
